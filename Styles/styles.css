@@ -179,4 +179,134 @@ footer {
     display: flex; 
     justify-content: center; 
     align-items: center;
+} 
+
+.cadaPelicula { 
+    display: flex; 
+    flex-direction: column; 
+    flex-wrap: wrap; 
+    color: #A75D5D; 
+    gap: 50px;
+} 
+
+.btnDetalle { 
+    text-decoration: none; 
+    color: #F0997D; 
+    font-weight: 900;
+    font-size: 30px;
+    font-family: 'Cormorant SC', serif;
+    font-family: 'Outfit', sans-serif;
+    font-family: 'Rye', cursive; 
+    border: #FFC3A1 inset 3px; 
+    border-radius: 50%; 
+    width: 150px; 
+    height: 50px;
+} 
+.detailMovie { 
+    display: flex;  
+    gap: 3%; 
+    /* flex-wrap: wrap; */
+    
 }
+
+.imgMovie { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    width: 40%; 
+    padding: 20px;
+
+} 
+
+.imgPoster { 
+    width: 300px; 
+} 
+
+.imgIcono { 
+    padding-left: 30%;
+    
+}
+
+.detalleMovie { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    gap: 20px; 
+    padding: 50px 10px 10px 10px;
+} 
+
+.btnFavorites { 
+    width: 130px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    text-decoration: none; 
+    color: #A75D5D; 
+    border: 8px #FFC3A1 double; 
+    border-radius: 40%; 
+    font-style: italic; 
+    font-size: large; 
+}
+
+.btnAddFavorites { 
+    display: flex;
+    justify-content: flex-end;
+} 
+
+.favMovie { 
+    display: flex; 
+    gap: 10%; 
+    padding: 40px;
+} 
+
+.detalleMovieFav { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    gap: 5%;
+    padding: 10px;
+} 
+
+.SignUp, .divSignUp, 
+.formLogin, .divTroisSignUp, 
+.mainLogin, .divLoginOne, 
+.divLoginTwo, .mainForget, 
+.divForget  { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    padding: 2%;
+} 
+.divTwoSignUp { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} 
+.redes { 
+    display: flex; 
+    gap: 20px;
+} 
+.redes img { 
+    width: 50px;
+}
+
+.mainLogin img { 
+    width: 200px; 
+} 
+.divLoginTwo a { 
+    text-decoration: none; 
+    color: #D3756B;
+}
+.mainForget img { 
+    width: 250px; 
+}
+.divForget { 
+
+}
+
+

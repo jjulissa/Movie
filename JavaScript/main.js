@@ -16,24 +16,28 @@ form.addEventListener("submit", (event) => {
 
     fetch(`http://www.omdbapi.com/?s=${buscar}&apikey=6b65d0f5`)
         .then(res => res.json()) 
-        .then(data => data.Search.forEach((element) => {
+        .then(data => { 
+            allMovie.innerText = ""
+
+            data.Search.forEach((element) => {
              console.log(element); 
-        
-    let cadaPelicula = document.createElement("div"); 
-    cadaPelicula.classList.add("cadaPelicula");  
-    cadaPelicula.innerHTML = 
+
+            let cadaPelicula = document.createElement("div"); 
+            cadaPelicula.classList.add("cadaPelicula");  
+            cadaPelicula.innerHTML = 
         `
             <div> 
                 <img src="${element.Poster}" alt="imgPosterPelicula"> 
                 <h1>Title: ${element.Title}</h1> 
                 <p>Year: ${element.Year}</p>  
-                <a href="./Page/movie.html?id=${element.imdbID}">Details</a> 
+                <a class="btnDetalle" href="./Page/movie.html?id=${element.imdbID}">Details</a> 
             </div>
         `
         imgHomeWelcome.remove(); 
         allMovie.append(cadaPelicula) 
 
-}))
+})})  
+
     .catch (error => console.log("error"))
 }); 
 
