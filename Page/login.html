@@ -25,17 +25,21 @@
             <a href="./signUp.html">Sign up</a>
         </section> 
 
+        <a href="./favorites.html">
+            <img class="homeFav" src="../Assets/love.png" alt="image">
+        </a>
+
     </header> 
 
     <main class="mainLogin"> 
         <img src="../Assets/logg.png" alt="fotoLogin">
         <form class="formLogin" action="">  
             <div class="divLoginOne"> 
-                <label for="">UserName</label> 
-                <input type="text"> 
+                <label for="userName">UserName</label> 
+                <input type="text" name="userName" id="userName"> 
 
-                <label for="">Password</label> 
-                <input type="text"> 
+                <label for="password">Password</label> 
+                <input type="password" name="password" id="password"> 
             </div> 
 
             <div class="divLoginTwo">
@@ -47,7 +51,9 @@
                 <a href="./forgetPassword.html"><p>Forget Password?</p></a>
             </div>
 
-            <button class="btnLogin">LOGIN</button>
+            <a href="../index.html">
+                <button class="btnLogin">LOGIN</button>
+            </a> 
 
         </form>
     </main> 
@@ -58,5 +64,7 @@
         </p>
     </footer> 
     
+
+    <script src="../JavaScript/login.js"></script>
 </body>
 </html>

@@ -28,7 +28,7 @@ fetch(`http://www.omdbapi.com/?apikey=6b65d0f5&i=${anuncioParam}`)
              
 
                 <div class="btnAddFavorites"> 
-                    <a class="btnFavorites" href="./favorites.html">Add to Favorites</a> 
+                    <a class="btnFavorites" href="../Page/favorites.html">Add to Favorites</a> 
                 </div> 
             </div>
             `

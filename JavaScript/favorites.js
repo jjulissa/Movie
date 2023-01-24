@@ -15,8 +15,15 @@ respuestaMovieFavorite.forEach(element => {
                 <p>Duration: ${element.Runtime} </p> 
                 <p>Director: ${element.Director} </p> 
                 <p>Synopsis: ${element.Plot} </p> 
+                <button class ="btnDelete" >Delete</button>
             </div>
         `
     mainFavorites.append(favMovie); 
     
+    let btnDelete = document.querySelector(".btnDelete"); 
+
+    btnDelete.addEventListener("click", (event) => {  
+        event.preventDefault()
+        favMovie.remove()
+    })
 });

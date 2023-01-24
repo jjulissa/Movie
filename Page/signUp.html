@@ -25,44 +25,48 @@
             <a href="#">Sign up</a>
         </section> 
 
+        <a href="./favorites.html">
+            <img class="homeFav" src="../Assets/love.png" alt="image">
+        </a>
+
     </header> 
 
     <main class="mainSignUp"> 
         <form class="SignUp" action=""> 
             <div class="divSignUp"> 
-                <label for="">First Name</label> 
-                <input type="text" name="" id="">  
+                <label for="firstName">First Name</label> 
+                <input type="text" name="firstName" id="firstName">  
                 
-                <label for="">Last Name</label> 
-                <input type="text" name="" id="">  
+                <label for="lastName">Last Name</label> 
+                <input type="text" name="lastName" id="lastName">  
 
-                <label for="">Email</label> 
-                <input type="text" name="" id="">  
+                <label for="email">Email</label> 
+                <input type="text" name="email" id="email">  
 
-                <label for="">Password</label> 
-                <input type="password" name="" id="">  
+                <label for="password">Password</label> 
+                <input type="password" name="password" id="password">  
 
-                <label for="">Phone Number</label> 
-                <input type="number" name="" id=""> 
+                <label for="phoneNumber">Phone Number</label> 
+                <input type="number" name="phoneNumber" id="phoneNumber"> 
 
                 <article class="divTwoSignUp">
-                    <input type="checkbox" name="" id=""> 
-                    <label for="">I accept the <a href="./termsPrivacy.html">Terms of Use</a> & <a href="./termsPrivacy.htmls">Privacy Policy</a> </label>
+                    <input type="checkbox" name="termsPrivacy" id="termsPrivacy"> 
+                    <label for="termsPrivacy">I accept the <a href="./termsPrivacy.html">Terms of Use</a> & <a href="./termsPrivacy.htmls">Privacy Policy</a></label>
                 </article>
             </div> 
 
             <div class="divTroisSignUp">
-                <p> Already a member?<a href="./login.html">LOG IN</a></p> 
-                <button>Sign Up</button>
+                <p> Already a member?  <a href="./login.html"> LOG IN</a></p> 
+                <button type="submit"><a href="../index.html">Sign Up</a></button>
             </div> 
-
-            <div class="redes">  
-                <a href="https://www.facebook.com/"><img src="../Assets/facebook.png" alt=""></a>
-                <a href="mailto:info@gammatech.school"><img src="../Assets/gmail.png" alt=""></a>  
-                <a href="https://www.linkedin.com/feed/"><img src="../Assets/linkedin.png" alt=""></a>  
-                <a href="https://twitter.com/home"><img src="../Assets/twitter.png" alt=""></a> 
-            </div>
         </form> 
+
+        <div class="redes">  
+            <a href="https://www.facebook.com/"><img src="../Assets/facebook.png" alt=""></a>
+            <a href="mailto:info@gammatech.school"><img src="../Assets/gmail.png" alt=""></a>  
+            <a href="https://www.linkedin.com/feed/"><img src="../Assets/linkedin.png" alt=""></a>  
+            <a href="https://twitter.com/home"><img src="../Assets/twitter.png" alt=""></a> 
+        </div>
     </main>
 
     <footer> 
@@ -70,6 +74,8 @@
             Tous droits réservés - JJulissa - 2023  
         </p>
     </footer> 
+
+    <script src="../JavaScript/signUp.js"></script>
 
 </body>
 </html>
