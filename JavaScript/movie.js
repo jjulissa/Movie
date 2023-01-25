@@ -1,3 +1,24 @@
+// Import the functions you need from the SDKs you need
+import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBh2NbbGCuvBOzKm7fv3-9n3aS5StV17L4",
+    authDomain: "movieapi-omdbapi.firebaseapp.com",
+    projectId: "movieapi-omdbapi",
+    storageBucket: "movieapi-omdbapi.appspot.com",
+    messagingSenderId: "867886674962",
+    appId: "1:867886674962:web:bf2277e9c3e381b4a714cb"
+  };
+
+  // Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+
 let detalleMovie = document.querySelector(".detalleMovie"); 
 // console.log(detalleMovie);  
 
@@ -25,7 +46,6 @@ fetch(`http://www.omdbapi.com/?apikey=6b65d0f5&i=${anuncioParam}`)
                 <p>Duration: ${data.Runtime} </p> 
                 <p>Director: ${data.Director} </p> 
                 <p>Synopsis: ${data.Plot} </p> 
-             
 
                 <div class="btnAddFavorites"> 
                     <a class="btnFavorites" href="../Page/favorites.html">Add to Favorites</a> 
@@ -38,10 +58,16 @@ fetch(`http://www.omdbapi.com/?apikey=6b65d0f5&i=${anuncioParam}`)
         let imgIcono = document.querySelector(".imgIcono"); 
         let arrayFavorite = JSON.parse(localStorage.getItem('MovieFavorite')) || []; 
 
-        btnFavorites.addEventListener("click", (event) => {  
+        btnFavorites.addEventListener("click", async (event) => {  
             event.preventDefault(); 
             if (!arrayFavorite.find((e) => e.imdbID == data.imdbID)) {
                 arrayFavorite.push(data);
+                try {
+                    await setDoc(doc(db, "favoritos", "user1"), {arrayFavorite});
+                } catch (error) {
+                    console.log('Error adding document: ', error);
+                }
+
                 localStorage.setItem("MovieFavorite", JSON.stringify(arrayFavorite));
             } else {
                 alert("Already added to favorites");
