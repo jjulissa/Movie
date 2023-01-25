@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"; 
-import { getFirestore, getDoc, doc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"; 
+import { getFirestore, getDoc, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"; 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -17,44 +17,23 @@ import { getFirestore, getDoc, doc } from "https://www.gstatic.com/firebasejs/9.
     const app = initializeApp(firebaseConfig); 
     const db = getFirestore(app);
 
-
-
-
-
 const docRef = doc(db, "favoritos", "user1");
-const docSnap = await getDoc(docRef).then(res=> res);
+let arrayFavorite = await getDoc(docRef).then(res=> res.data().arrayFavorite || []);
+console.log(arrayFavorite);
 
-if (docSnap.exists()) {
-  console.log(docSnap.data().arrayFavorite);
-} else {
-  // doc.data() will be undefined in this case
-  console.log("No such document!");
-}
-
-
-
+// if (docSnap.exists()) {
+//   console.log(docSnap.data().arrayFavorite);
+// } else {
+//   // doc.data() will be undefined in this case
+//   console.log("No such document!");
+// }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let respuestaMovieFavorite = JSON.parse(localStorage.getItem("MovieFavorite")); 
+//let respuestaMovieFavorite = JSON.parse(localStorage.getItem("MovieFavorite")); 
 let mainFavorites = document.querySelector(".mainFavorites"); 
 
 
-respuestaMovieFavorite.forEach((element, i) => { 
+arrayFavorite.forEach((element, i) => { 
     let favMovie = document.createElement("div"); 
     favMovie.classList.add("favMovie"); 
     favMovie.innerHTML = 
@@ -71,16 +50,20 @@ respuestaMovieFavorite.forEach((element, i) => {
         `
     mainFavorites.append(favMovie); 
     
-    let btnsDelete = document.querySelectorAll(".btnDelete");  
+    favMovie.children[1].children[5].addEventListener("click", async(event) => { 
+        // console.log(btnDelete.parentElement.parentElement);
+        favMovie.remove(); 
+        arrayFavorite = arrayFavorite.filter(e => e.imdbID !== element.imdbID)
 
-    btnsDelete.forEach((btnDelete)=> (
-        btnDelete.addEventListener("click", (event) => { 
-            // console.log(btnDelete.parentElement.parentElement);
-            btnDelete.parentElement.parentElement.remove(); 
-            const newArray = respuestaMovieFavorite.filter(e => e.Title === event.target.parentElement.children[0].innerText)
-            localStorage.setItem('MovieFavorite', JSON.stringify(newArray))
-        }) 
-    ))
+        setDoc(doc(db,'favoritos','user1'), {
+            arrayFavorite 
+        })
+        
+    }) 
+    // let btnsDelete = document.querySelectorAll(".btnDelete");  
+
+    // btnsDelete.forEach((btnDelete,i)=> (
+    // ))
 });
 
   

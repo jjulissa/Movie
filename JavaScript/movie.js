@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { getFirestore, setDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -29,7 +29,7 @@ var anuncioParam = urlParams.get('id');
 
 fetch(`http://www.omdbapi.com/?apikey=6b65d0f5&i=${anuncioParam}`) 
     .then(res => res.json()) 
-    .then(data => {  
+    .then(async(data) => {  
         // console.log(data);
         let detailMovie = document.createElement("div"); 
         detailMovie.classList.add("detailMovie"); 
@@ -56,7 +56,7 @@ fetch(`http://www.omdbapi.com/?apikey=6b65d0f5&i=${anuncioParam}`)
         
         let btnFavorites = document.querySelector(".btnFavorites"); 
         let imgIcono = document.querySelector(".imgIcono"); 
-        let arrayFavorite = JSON.parse(localStorage.getItem('MovieFavorite')) || []; 
+        let arrayFavorite = await getDoc(doc(db,'favoritos','user1')).then(res=> res.data().arrayFavorite || []);
 
         btnFavorites.addEventListener("click", async (event) => {  
             event.preventDefault(); 
