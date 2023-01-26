@@ -44,7 +44,6 @@ formLogin.addEventListener("submit", (event) => {
     .then((userCredential) => {
       const user = userCredential.user; 
       
-
     alert('🤪')
     }) 
 
@@ -54,7 +53,9 @@ formLogin.addEventListener("submit", (event) => {
 
       console.log(errorCode); 
       console.log(errorMessage);
-    });
+    }); 
+
+    location.assign('../index.html')
 }) 
 
 

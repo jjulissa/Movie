@@ -75,7 +75,8 @@ form.addEventListener("submit", (event) => {
       const errorMessage = error.message; 
     
     }); 
-        
+       
+    location.assign('../index.html'); 
 }) 
 
 

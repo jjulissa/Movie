@@ -69,8 +69,8 @@ fetch(`http://www.omdbapi.com/?apikey=6b65d0f5&i=${anuncioParam}`)
                 }
 
                 localStorage.setItem("MovieFavorite", JSON.stringify(arrayFavorite));
-            } else {  
                 btnFavorites.innerText = "Already added to favorites"
+            } 
                 // let yaEsta = document.createElement("p"); 
                 // yaEsta.innerText = "Already added to favorites"; 
                 // yaEsta.classList.add("btnFavorites"); 
@@ -80,7 +80,7 @@ fetch(`http://www.omdbapi.com/?apikey=6b65d0f5&i=${anuncioParam}`)
                 // btnFavorites.style.background = "black";
                 // btnFavorites.style.color = "black";
                 // alert("Already added to favorites");
-            }
+            
         }) 
 
         imgIcono.addEventListener("click", async (event) => {  
@@ -93,10 +93,10 @@ fetch(`http://www.omdbapi.com/?apikey=6b65d0f5&i=${anuncioParam}`)
                     console.log('Error adding document: ', error);
                 }
                 localStorage.setItem("MovieFavorite", JSON.stringify(arrayFavorite));
-            } else { 
                 btnFavorites.innerText = "Already added to favorites"
+            } 
                 // alert("Already added to favorites");
-            }   
+            
     }) 
     
 })
