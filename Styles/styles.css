@@ -227,8 +227,12 @@ footer {
     justify-content: center; 
     align-items: center; 
     gap: 10px; 
-    padding: 2%;
+    padding: 2%; 
 } 
+
+.mainLogin, .mainSignUp { 
+    height: 75vh;
+}
 .divTwoSignUp, .redes { 
     display: flex;
     /* flex-direction: row; */
@@ -453,11 +457,12 @@ footer {
     background-image: url("../Assets/backg.jpeg"); 
     width: 100%; 
     background-repeat: no-repeat; 
-    height: 80%;
+    height: 100vh;
 }
 
 .mainHome { 
-    background-image: url("../Assets/backgr.jpeg");
+    background-image: url("../Assets/backgr.jpeg"); 
+   
 } 
 
 

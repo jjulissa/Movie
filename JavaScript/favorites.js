@@ -60,10 +60,7 @@ arrayFavorite.forEach((element, i) => {
         })
         
     }) 
-    // let btnsDelete = document.querySelectorAll(".btnDelete");  
-
-    // btnsDelete.forEach((btnDelete,i)=> (
-    // ))
+    
 });
 
   
