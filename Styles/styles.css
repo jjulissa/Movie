@@ -9,11 +9,13 @@ body {
 } 
 
 header { 
+    /* position: fixed; */
     background-color: #fb7756;
     display: flex; 
     justify-content: space-around; 
     align-items: center; 
-    height: 12%; 
+    height: 12%;  
+    width: 100%;
     flex-wrap: wrap;
 } 
 .homeFav { 
@@ -21,7 +23,8 @@ header {
 }
 
 header img {
-    width: 100px; 
+    width: 100px;  
+    
 
 } 
 .title { 

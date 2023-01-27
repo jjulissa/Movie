@@ -34,6 +34,7 @@ let mainFavorites = document.querySelector(".mainFavorites");
 
 
 arrayFavorite.forEach((element, i) => { 
+
     let favMovie = document.createElement("div"); 
     favMovie.classList.add("favMovie"); 
     favMovie.innerHTML = 
